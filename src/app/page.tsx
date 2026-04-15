@@ -4,6 +4,7 @@ import { useState } from "react";
 import InteractiveBackground from "@/src/components/ui/InteractiveBackground";
 // import LoadingScreen from "@/components/LoadingScreen";
 // import MagneticButton from "@/components/MagneticButton"; // New Button
+import FloatingDockDemo from "@/src/components/floating-dock-demo";
 
 export default function Home() {
   const [isLoading] = useState(true);
@@ -28,7 +29,7 @@ export default function Home() {
       <div className={`transition-opacity duration-1000 ${isLoading ? "opacity-0" : "opacity-100"}`}>
         {/* Navigation */}
         <div className="relative z-50">
-            {/* <Sidebar /> */}
+            <FloatingDockDemo />
         </div>
         {/* Audio Player (Bottom Right) */}
         {/* Main Center Content */}
