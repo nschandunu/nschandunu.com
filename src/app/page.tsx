@@ -3,11 +3,11 @@ import { useState } from "react";
 // import Sidebar from "@/components/Sidebar";
 import InteractiveBackground from "@/src/components/ui/InteractiveBackground";
 // import LoadingScreen from "@/components/LoadingScreen";
-// import MagneticButton from "@/components/MagneticButton"; // New Button
-import FloatingDockDemo from "@/src/components/floating-dock-demo";
+import MagneticButton from "@/src/components/MagneticButton";
+// import FloatingDockDemo from "@/src/components/floating-dock-demo";
 
 export default function Home() {
-  const [isLoading] = useState(true);
+  const [isLoading] = useState(false);
 
   return (
     <main className="relative min-h-screen w-full overflow-hidden bg-black">
@@ -29,14 +29,14 @@ export default function Home() {
       <div className={`transition-opacity duration-1000 ${isLoading ? "opacity-0" : "opacity-100"}`}>
         {/* Navigation */}
         <div className="relative z-50">
-            <FloatingDockDemo />
+            {/* <FloatingDockDemo /> */}
         </div>
         {/* Audio Player (Bottom Right) */}
         {/* Main Center Content */}
         <div className="relative z-40 flex flex-col items-center justify-end h-screen pb-24 pointer-events-none">
             {/* The New Magnetic Button (Pointer events auto to allow interaction) */}
             <div className="pointer-events-auto">
-                {/* <MagneticButton /> */}
+                <MagneticButton />
             </div>
 
             {/* Flavor Text */}
