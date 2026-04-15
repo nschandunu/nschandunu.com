@@ -1,15 +1,36 @@
 'use client';
 
-import React from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import styled from 'styled-components';
 
-const Switch = () => {
+const Switch = ({ musicUrl = '/bg.mp3' }: { musicUrl?: string }) => {
+  const [isOn, setIsOn] = useState(true);
+  const audioRef = useRef<HTMLAudioElement>(null);
+
+  useEffect(() => {
+    const audio = audioRef.current;
+    if (!audio) return;
+
+    if (isOn) {
+      audio.play().catch(err => console.log('Audio play failed:', err));
+    } else {
+      audio.pause();
+      audio.currentTime = 0;
+    }
+  }, [isOn]);
+
+  const handleToggle = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setIsOn(e.target.checked);
+  };
+
   return (
-    <FixedContainer>
-      <StyledWrapper>
-        <label className="switch">
-          <input type="checkbox" defaultChecked />
-          <div className="button">
+    <>
+      <audio ref={audioRef} src={musicUrl} loop />
+      <FixedContainer>
+        <StyledWrapper>
+          <label className="switch">
+            <input type="checkbox" checked={isOn} onChange={handleToggle} />
+            <div className="button">
             <div className="light" />
             <div className="dots" />
             <div className="characters" />
@@ -19,6 +40,7 @@ const Switch = () => {
         </label>
       </StyledWrapper>
     </FixedContainer>
+    </>
   );
 }
 
