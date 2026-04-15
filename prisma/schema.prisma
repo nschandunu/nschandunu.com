@@ -1,13 +1,38 @@
-// This is your Prisma schema file,
-// learn more about it in the docs: https://pris.ly/d/prisma-schema
-
-// Get a free hosted Postgres database in seconds: `npx create-db`
-
 generator client {
-  provider = "prisma-client"
-  output   = "../app/generated/prisma"
+  provider = "prisma-client-js"
 }
 
 datasource db {
   provider = "postgresql"
+}
+
+model Project {
+  id          String   @id @default(cuid())
+  title       String   // e.g., "Evalora" or "ASMO"
+  description String
+  techStack   String[] // Arrays are perfect for Postgres: ["Next.js", "TypeScript", "Prisma"]
+  imageUrl    String?  // The '?' makes it optional
+  githubUrl   String?
+  liveUrl     String?
+  isFeatured  Boolean  @default(false) // Pin your best work to the top
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+}
+
+model Achievement {
+  id          String   @id @default(cuid())
+  title       String   // e.g., "3rd Runner-up at PlymHack 2026"
+  description String
+  date        DateTime
+  category    String   // Helpful for filtering (e.g., "Hackathon", "CTF", "Leadership")
+  createdAt   DateTime @default(now())
+}
+
+model Certification {
+  id             String   @id @default(cuid())
+  title          String
+  issuer         String   // e.g., "AWS", "Google", "IEEE"
+  dateEarned     DateTime
+  credentialUrl  String?
+  createdAt      DateTime @default(now())
 }
