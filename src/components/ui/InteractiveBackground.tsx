@@ -51,8 +51,8 @@ export default function InteractiveBackground() {
         className="relative w-full h-full gpu-accelerate"
       >
         <Image
-          src="/assets/bgdark.webp"
-          alt="Dark abstract background for Oshada Rashmika portfolio"
+          src="/assets/bgdark.png"
+          alt="Dark abstract background for Senuka Chandunu's portfolio"
           fill
           priority
           className="object-cover object-center"

@@ -11,8 +11,8 @@ export default function Home() {
   return (
     <main className="relative min-h-screen w-full overflow-hidden bg-black">
       {/* SEO Headings for homepage */}
-      <h1 className="sr-only">Oshada Rashmika – Web Developer Portfolio</h1>
-      <h2 className="sr-only">Welcome to the personal portfolio of Oshada Rashmika</h2>
+      <h1 className="sr-only">Senuka Chandunu – Web Developer Portfolio</h1>
+      <h2 className="sr-only">Welcome to the personal portfolio of Senuka Chandunu</h2>
 
       {/* 1. LOADING SCREEN
       <AnimatePresence>
