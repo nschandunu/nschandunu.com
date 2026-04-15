@@ -55,7 +55,7 @@ export default function InteractiveBackground() {
           alt="Dark abstract background for Senuka Chandunu's portfolio"
           fill
           priority
-          className="object-cover object-center"
+          className="object-cover object-top"
           quality={75}
         />
         
