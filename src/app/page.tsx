@@ -1,6 +1,6 @@
 "use client";
 import { useState } from "react";
-// import Sidebar from "@/components/Sidebar";
+import Sidebar from "@/src/components/Sidebar";
 import InteractiveBackground from "@/src/components/ui/InteractiveBackground";
 // import LoadingScreen from "@/components/LoadingScreen";
 import MagneticButton from "@/src/components/MagneticButton";
@@ -29,6 +29,7 @@ export default function Home() {
       <div className={`transition-opacity duration-1000 ${isLoading ? "opacity-0" : "opacity-100"}`}>
         {/* Navigation */}
         <div className="relative z-50">
+            <Sidebar />
             {/* <FloatingDockDemo /> */}
         </div>
         {/* Audio Player (Bottom Right) */}

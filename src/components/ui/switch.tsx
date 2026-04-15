@@ -3,8 +3,8 @@
 import React, { useState, useRef, useEffect } from 'react';
 import styled from 'styled-components';
 
-const Switch = ({ musicUrl = '/bg.mp3' }: { musicUrl?: string }) => {
-  const [isOn, setIsOn] = useState(true);
+const Switch = ({ musicUrl = '/assets/bg.mp3' }: { musicUrl?: string }) => {
+  const [isOn, setIsOn] = useState(false);
   const audioRef = useRef<HTMLAudioElement>(null);
 
   useEffect(() => {
@@ -47,7 +47,7 @@ const Switch = ({ musicUrl = '/bg.mp3' }: { musicUrl?: string }) => {
 const FixedContainer = styled.div`
   position: fixed;
   bottom: 20px;
-  left: 20px;
+  right: 20px;
   z-index: 50;
 `;
 
